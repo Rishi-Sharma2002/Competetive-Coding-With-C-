@@ -12,11 +12,11 @@ int main()
     {
         if(arr[i]==elem)
         {
-            for(j=i; j<(size-1); j++)
-                arr[j] = arr[j+1];
-            found++;
-            i--;
-            size--;
+	  for(int j=i; j<size; j++)
+	    arr[j] = arr[j+1];
+	  size--;
+	  found++;
+	  break;
         }
     }
     if(found==0)
@@ -24,5 +24,8 @@ int main()
     else
         cout<<"\nElement Deleted Successfully!";
     cout<<endl;
+    cout<<"Final Array:- ";
+    for(int i=0;i<size-1; i++)
+      cout<<arr[i]<<" ";
     return 0;
 }

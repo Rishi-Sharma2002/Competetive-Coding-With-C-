@@ -1,52 +1,37 @@
 #include <iostream> 
 using namespace std; 
   
-
-int* insertX(int n, int arr[], 
-             int x, int pos) 
-{ 
-    int i; 
-  
-    // increase the size by 1 
-    n++; 
-  
-    // shift elements forward 
-    for (i = n; i >= pos; i--) 
-        arr[i] = arr[i - 1]; 
-  
-    // insert x at pos 
-    arr[pos - 1] = x; 
-  
-    return arr; 
-} 
-  
+void insert(int a[], int size, int element)
+{size++;
+  for(int i=0;i<size;i++)
+  { 
+    if(a[i]>element)
+    {
+      for(int j=size; j>=i; j--)
+	a[j] = a[j-1];
+      a[i] = element;
+      break;
+    }
+  }
+  cout<<endl;
+  for(int i=0;i<size;i++)
+    cout<<a[i]<<" ";
+}
 
 int main() 
-{ 
-    int arr[100] = { 0 }; 
-    int i, x, pos, n = 10; 
-  
-    
-    for (i = 0; i < 10; i++) 
-        arr[i] = i + 1; 
-  
-    
-    for (i = 0; i < n; i++) 
-        cout << arr[i] << " "; 
-    cout << endl; 
-  
-    cin>>x;
+{
+  int arr[100], size, element;
+  cout<<"Enter the size of array:- ";
+  cin>>size;
+  cout<<"\nEnter the array(Sorted Array!):- ";
+  for(int i=0;i<size;i++)
+  {
+    cin>>arr[i];
+  }
+  cout<<"\nEnter element you want to insert:- ";
+  cin>>element;
 
-    cin>>pos;
-     
-  
-     
-    insertX(n, arr, x, pos); 
-  
-    
-    for (i = 0; i < n + 1; i++) 
-        cout << arr[i] << " "; 
-    cout << endl; 
+  insert(arr, size, element);
   
     return 0; 
 } 
