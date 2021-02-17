@@ -1,29 +1,26 @@
 #include<iostream>
-#include<vector>
-#include<algorithm>
 
 using namespace std;
 
-void Linear_Search(int arr[10], int n)
-{ int search;
-  cout<<"\nEnter element you want to find:- ";
+void linear(int n, int a[100]){
+  int search;
+  cout<<endl<<"Enter the element you want to search: ";
   cin>>search;
-  for(int i=0;i<n;i++)
-  {if(arr[i] == search)
-    {cout<<"\nElement is found at position "<<i+1;break;}
-    }
+  for(int i=0; i<n; i++)
+    if(a[i] == search)
+      cout<<endl<<"Element found at index: "<<i+1;
   }
+
 int main(){
-  int n, arr[10];
-  cout<<"-----------LINEAR SEARCH-----------";
-  cout<<"\nEnter the size of the array:- ";
+  int n, a[100];
+  cout<<"----------Linear Search---------"<<endl;
+  cout<<endl<<"Enter the size of array: ";
   cin>>n;
-  cout<<"\nEnter elements of the arrays:- ";
-  for(int i=0;i<n;i++)
-    cin>>arr[i];
+  cout<<endl<<"Enter the array: ";
+  for(int i=0; i<n; i++)
+    cin>>a[i];
 
-  Linear_Search(arr, n);
-
+  linear(n, a);
 
   return 0;}
 
